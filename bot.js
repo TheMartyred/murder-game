@@ -2,7 +2,7 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 var fs = require('fs');
-var known = ["yoshi", "fox", "banjo", "duckhunt", "kazooie", "falco"]
+var known = ["banjo", "bowser", "daisy", "diddy", "dixie", "falco", "hunt", "incineroar", "inkling", "isabelle", "k.rool", "kazooie", "kong", "koops", "krystal", "link", "lucario", "mario", "medli", "mipha", "morgana", "plant", "renamon", "revali", "ruto", "samus", "tiny", "yoshi", "zelda"]
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
@@ -26,6 +26,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
         var args = message.substring(4).split(' ');
         var cmd = args[1];
+        var cmd2 = args[2];
 
         logger.info("registered: "+cmd);
        
@@ -37,6 +38,17 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             bot.uploadFile({
                 to: channelID,
                 file: "./"+cmd+"/"+files[Math.floor(Math.random() * files.length)]
+            });
+            logger.info("File Uploaded!");
+            // Just add any case commands if you want to..
+        }
+        else if (known.includes(cmd2)) {
+            logger.info("Recognized!");
+            var files = fs.readdirSync('./'+cmd2);
+            logger.info("Files: ".concat(files[Math.floor(Math.random() * files.length)]));
+            bot.uploadFile({
+                to: channelID,
+                file: "./"+cmd2+"/"+files[Math.floor(Math.random() * files.length)]
             });
             logger.info("File Uploaded!");
             // Just add any case commands if you want to..
@@ -59,7 +71,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         var args = message.substring(3).split(' ');
         var cmd = args[1];
 
-        var excuse = ["having a good slice of pizza", "on a waterslide", "enjoying a day at the beach", "a little hot"]
+        var excuse = ["having a good slice of pizza", "on a waterslide", "enjoying a day at the beach", "a little hot", "enjoying some yogurt", "wrestling"];
 
         logger.info("registered: "+cmd);
        
