@@ -1,0 +1,11 @@
+{
+	"name": "not-a-porn-bot",
+	"version": "0.0.1",
+	"description": "definitely does not post cropped porn",
+	"main": "bot.js",
+	"author": "TheMartyred",
+	"dependencies": {
+		"discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+		"winston": "^3.2.1"
+	}
+}
