@@ -54,9 +54,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             logger.info("File Uploaded!");
         }
     }
-    if (message.substring(0, 4) == "Is ") 
+    if (message.substring(0, 3) == "Is ") 
     {
-        var args = message.substring(4).split(' ');
+        var args = message.substring(3).split(' ');
         var cmd = args[1];
 
         var excuse = ["having a good slice of pizza", "on a waterslide", "enjoying a day at the beach", "a little hot"]
