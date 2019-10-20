@@ -22,10 +22,10 @@ bot.on('ready', function (evt) {
 bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
-    if (message.substring(0, 8) == "I'd tap ") 
+    if (message.substring(0, 4) == "I'd ") 
     {
-        var args = message.substring(8).split(' ');
-        var cmd = args[0];
+        var args = message.substring(4).split(' ');
+        var cmd = args[1];
 
         logger.info("registered: "+cmd);
        
