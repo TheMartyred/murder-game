@@ -2,7 +2,7 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 var fs = require('fs');
-var known = ["banjo", "bowser", "daisy", "diddy", "dixie", "falco", "hunt", "incineroar", "inkling", "isabelle", "k.rool", "kazooie", "kong", "koops", "krystal", "link", "lucario", "mario", "medli", "mipha", "morgana", "plant", "renamon", "revali", "ruto", "samus", "tiny", "yoshi", "zelda"]
+var known = ["banjo", "blaziken", "bowser", "braixen", "daisy", "diddy", "dixie", "falco", "fox", "glaceon", "goomba", "houndoom", "hunt", "impmon", "incineroar", "inkling", "isabelle", "k.rool", "kass", "kazooie", "kong", "koopa", "koops", "krystal", "laylee", "link", "lucario", "mario", "medli", "midna", "mipha", "morgana", "pikachu", "plant", "renamon", "revali", "ruto", "samus", "snivy", "sonic", "tiny", "wario", "yoshi", "zangoose", "zelda", "zeraora", "zoroark"]
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
@@ -71,7 +71,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         var args = message.substring(3).split(' ');
         var cmd = args[1];
 
-        var excuse = ["having a good slice of pizza", "on a waterslide", "enjoying a day at the beach", "a little hot", "enjoying some yogurt", "wrestling"];
+        var excuse = ["having a good slice of pizza", "on a waterslide", "enjoying a day at the beach", "a little hot", "enjoying some yogurt", "wrestling", "a little cold", "struggling to open a jar", "a little sick", "yawning", "laughing"];
 
         logger.info("registered: "+cmd);
        
