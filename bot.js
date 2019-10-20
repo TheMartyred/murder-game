@@ -2,7 +2,7 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 var fs = require('fs');
-var known = ["yoshi", "fox"]
+var known = ["yoshi", "fox", "banjo", "duckhunt", "kazooie", "falco"]
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
@@ -40,9 +40,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             });
             logger.info("File Uploaded!");
             // Just add any case commands if you want to..
-         }
-         else if (cmd == "that") 
-         {
+        }
+        else if (cmd == "that") 
+        {
             logger.info("Recognized generic!");
             var selection = known[Math.floor(Math.random() * known.length)]
             var files = fs.readdirSync('./'+selection);
@@ -52,6 +52,25 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 file: "./"+selection+"/"+files[Math.floor(Math.random() * files.length)]
             });
             logger.info("File Uploaded!");
-         }
-     }
+        }
+    }
+    if (message.substring(0, 4) == "Is ") 
+    {
+        var args = message.substring(4).split(' ');
+        var cmd = args[1];
+
+        var excuse = ["having a good slice of pizza", "on a waterslide", "enjoying a day at the beach", "a little hot"]
+
+        logger.info("registered: "+cmd);
+       
+        args = args.splice(1);
+        if (cmd == "porn?") 
+        {
+            logger.info("Recognized generic!");
+            bot.sendMessage({
+                to: channelID,
+                message: "No! They're just "+excuse[Math.floor(Math.random() * excuse.length)+"."]
+            });
+        }
+    }
 });
