@@ -2,7 +2,7 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 var fs = require('fs');
-var known = ["banjo", "blaziken", "bowser", "braixen", "daisy", "diddy", "dixie", "falco", "fox", "glaceon", "goomba", "houndoom", "hunt", "impmon", "incineroar", "inkling", "isabelle", "k.rool", "kass", "kazooie", "kong", "koopa", "koops", "krystal", "laylee", "link", "lucario", "mario", "medli", "midna", "mipha", "morgana", "pikachu", "plant", "renamon", "revali", "ruto", "samus", "snivy", "sonic", "tiny", "wario", "yoshi", "zangoose", "zelda", "zeraora", "zoroark"]
+var known = ["arcanine", "banjo", "blaziken", "bowser", "braixen", "buizel", "daisy", "diddy", "dixie", "dragonite", "eevee", "falco", "fox", "glaceon", "goomba", "guilmon", "houndoom", "hunt", "impmon", "incineroar", "inkling", "isabelle", "k.rool", "kass", "kazooie", "kong", "koopa", "koops", "krystal", "laylee", "leafeon", "link", "lucario", "mario", "marowak", "medli", "midna", "mipha", "morgana", "pikachu", "plant", "rattata", "renamon", "revali", "rocko", "ruto", "samus", "shinx", "smeargle", "snivy", "sonic", "tails", "tiny", "wario", "weavile", "yooka", "yoshi", "zangoose", "zelda", "zeraora", "zoroark"]
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
