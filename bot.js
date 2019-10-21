@@ -2,7 +2,7 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 var fs = require('fs');
-var known = ["amy", "arcanine", "banjo", "blaziken", "bowser", "braixen", "buizel", "charmander", "chespin", "daisy", "diddy", "dixie", "dragonite", "eevee", "espeon", "falco", "flareon", "fox", "glaceon", "goomba", "guilmon", "houndoom", "hunt", "impmon", "incineroar", "inkling", "isabelle", "jiggly", "jolteon", "k.rool", "kass", "kazooie", "kirby", "knuckles", "kong", "koopa", "koops", "krystal", "laylee", "leafeon", "link", "lopunny", "lucario", "luigi", "mario", "marowak", "medli", "midna", "mipha", "morgana", "pichu", "pikachu", "plant", "raichu", "rattata", "renamon", "revali", "rocko", "ruto", "salazzle", "samus", "sheik", "shinx", "smeargle", "snivy", "sonic", "tails", "tepig", "tiny", "umbreon", "vanilla", "wario", "weavile", "yooka", "yoshi", "zangoose", "zelda", "zeraora", "zoroark"]
+var known = ["amy", "arcanine", "banjo", "blastoise", "blaziken", "bowser", "braixen", "buizel", "charizard", "charmander", "chespin", "daisy", "diddy", "dixie", "dragonite", "eevee", "espeon", "falco", "flareon", "fox", "glaceon", "goomba", "guilmon", "houndoom", "hunt", "impmon", "incineroar", "inkling", "isabelle", "jiggly", "jolteon", "k.rool", "kass", "kazooie", "kirby", "knuckles", "kong", "koopa", "koops", "krystal", "laylee", "leafeon", "link", "lopunny", "lucario", "luigi", "mario", "marowak", "medli", "midna", "mipha", "morgana", "pichu", "pikachu", "plant", "raichu", "rattata", "renamon", "revali", "rocko", "ruto", "salazzle", "samus", "sheik", "shinx", "smeargle", "snivy", "sonic", "sylveon", "tails", "tepig", "tiny", "umbreon", "vanilla", "wario", "weavile", "yooka", "yoshi", "zangoose", "zelda", "zeraora", "zoroark"]
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
@@ -71,7 +71,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         var args = message.substring(3).split(' ');
         var cmd = args[1];
 
-        var excuse = ["having a good slice of pizza", "on a waterslide", "getting a back rub", "really angry", "enjoying a day at the beach", "a little hot", "enjoying some yogurt", "wrestling", "a little cold", "struggling to open a jar", "a little sick", "yawning", "laughing", "hugging"];
+        var excuse = ["having a good slice of pizza", "on a waterslide", "getting a back rub", "really angry", "enjoying a day at the beach", "napping", "sleeping", "a little hot", "enjoying some yogurt", "wrestling", "a little cold", "struggling to open a jar", "a little sick", "yawning", "laughing", "hugging"];
 
         logger.info("registered: "+cmd);
        
