@@ -75,4 +75,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             });
         }
     }
+    if (message.substring(0, 3).equalsIgnoreCase("v#"))
+    {
+        bot.sendMessage({
+            to: channelID,
+            message: "Version: 1.0.0"
+        });
+    }
 });

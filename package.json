@@ -1,6 +1,6 @@
 {
 	"name": "not-a-porn-bot",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "definitely does not post cropped porn",
 	"main": "bot.js",
 	"author": "TheMartyred",
