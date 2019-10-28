@@ -22,38 +22,32 @@ bot.on('ready', function (evt) {
 bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
-    if (message.substring(0, 4) == "I'd ") 
+    var arg=message.split("'");
+    var messtart = arg[1].concat(arg[2]);
+
+    if (message.substring(0, 3).equalsIgnoreCase("id ")) 
     {
-        var args = message.substring(4).split(' ');
-        var cmd = args[1];
-        var cmd2 = args[2];
+        var args = message.substring(3).split(' ');
 
         logger.info("registered: "+cmd);
-       
-        args = args.splice(1);
-        if (known.includes(cmd)) {
-            logger.info("Recognized!");
-            var files = fs.readdirSync('./'+cmd);
-            logger.info("Files: ".concat(files[Math.floor(Math.random() * files.length)]));
-            bot.uploadFile({
-                to: channelID,
-                file: "./"+cmd+"/"+files[Math.floor(Math.random() * files.length)]
-            });
-            logger.info("File Uploaded!");
-            // Just add any case commands if you want to..
+        var that = true;
+        
+        for (i = 0; i < args.length; i++)
+        {
+            var cmd = args[i];
+            if (known.includes(cmd)) {
+                logger.info("Recognized!");
+                var files = fs.readdirSync('./'+cmd);
+                logger.info("Files: ".concat(files[Math.floor(Math.random() * files.length)]));
+                bot.uploadFile({
+                    to: channelID,
+                    file: "./"+cmd+"/"+files[Math.floor(Math.random() * files.length)]
+                });
+                logger.info("File Uploaded!");
+                // Just add any case commands if you want to..
+            }
         }
-        else if (known.includes(cmd2)) {
-            logger.info("Recognized!");
-            var files = fs.readdirSync('./'+cmd2);
-            logger.info("Files: ".concat(files[Math.floor(Math.random() * files.length)]));
-            bot.uploadFile({
-                to: channelID,
-                file: "./"+cmd2+"/"+files[Math.floor(Math.random() * files.length)]
-            });
-            logger.info("File Uploaded!");
-            // Just add any case commands if you want to..
-        }
-        else if (cmd == "that") 
+        else if (cmd.equalsIgnoreCase("that")) 
         {
             logger.info("Recognized generic!");
             var selection = known[Math.floor(Math.random() * known.length)]
@@ -66,17 +60,13 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             logger.info("File Uploaded!");
         }
     }
-    if (message.substring(0, 3) == "Is ") 
+    if (message.substring(0, 3).equalsIgnoreCase("is ")) 
     {
         var args = message.substring(3).split(' ');
-        var cmd = args[1];
 
         var excuse = ["having a good slice of pizza", "on a waterslide", "getting a back rub", "really angry", "enjoying a day at the beach", "napping", "sleeping", "a little hot", "enjoying some yogurt", "wrestling", "a little cold", "struggling to open a jar", "a little sick", "yawning", "laughing", "hugging"];
-
-        logger.info("registered: "+cmd);
        
-        args = args.splice(1);
-        if (cmd == "porn?") 
+        if (args.includes("porn?")) 
         {
             logger.info("Recognized generic!");
             bot.sendMessage({
