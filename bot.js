@@ -79,7 +79,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.0.0"
+            message: "Version: 1.0.1"
         });
     }
 });
