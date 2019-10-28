@@ -47,7 +47,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 // Just add any case commands if you want to..
             }
         }
-        else if (cmd.equalsIgnoreCase("that")) 
+        if (cmd.equalsIgnoreCase("that")) 
         {
             logger.info("Recognized generic!");
             var selection = known[Math.floor(Math.random() * known.length)]
@@ -68,7 +68,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
        
         if (args.includes("porn?")) 
         {
-            logger.info("Recognized generic!");
+            logger.info("Recognized accusation!");
             bot.sendMessage({
                 to: channelID,
                 message: "No! They're just "+excuse[Math.floor(Math.random() * excuse.length)]+"."
