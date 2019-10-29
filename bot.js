@@ -22,10 +22,14 @@ bot.on('ready', function (evt) {
 bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
-    var arg=message.split("'");
-    var messtart = arg[1].concat(arg[2]);
+    message=message.replace("'", "").toLowerCase();
+    // var messtart = (arg[1] + arg[2])
+    var messtarts = message.substring(0, 3);
+    // var messtart = message.substring(0, 4);
+    // logger.info(messtart);
 
-    if (message.substring(0, 3).equalsIgnoreCase("id ")) 
+    if (messtarts == "id ")
+    // if (messtarts.equalsIgnoreCase("id ")) 
     {
         var args = message.substring(3).split(' ');
 
@@ -47,7 +51,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 // Just add any case commands if you want to..
             }
         }
-        if (cmd.equalsIgnoreCase("that")) 
+        if (cmd == "that") 
         {
             logger.info("Recognized generic!");
             var selection = known[Math.floor(Math.random() * known.length)]
@@ -60,7 +64,8 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             logger.info("File Uploaded!");
         }
     }
-    if (message.substring(0, 3).equalsIgnoreCase("is ")) 
+    // if (message.substring(0, 3).equalsIgnoreCase("is ")) 
+    if (message.substring(0, 3) == "is ") 
     {
         var args = message.substring(3).split(' ');
 
@@ -75,11 +80,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             });
         }
     }
-    if (message.substring(0, 3).equalsIgnoreCase("v#"))
+    // if (message.substring(0, 3).equalsIgnoreCase("v#"))
+    if (message.substring(0, 2) == "v#")
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.0.1"
+            message: "Version: 1.0.2"
         });
     }
 });
