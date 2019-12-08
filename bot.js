@@ -67,7 +67,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         }
         else if (!recognized)
         {
-        	fs.writeFile('suggestions.txt', message, function (err) 
+        	fs.writeFile('suggestions.txt', message+"\n", function (err) 
         	{
   				if (err)
   				{ 
