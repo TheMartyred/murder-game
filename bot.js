@@ -97,6 +97,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
     	fs.readFile('DATA', 'utf8', function(err, contents) 
     	{
+    		var suggestions = contents
     		logger.info("log requested!");
         	bot.sendMessage({
             	to: channelID,
@@ -121,7 +122,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.1.5"
+            message: "Version: 1.1.6"
         });
     }
 });
