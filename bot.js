@@ -99,7 +99,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     	logger.info("log requested!");
         bot.sendMessage({
             to: channelID,
-            message: "contents: "+contents
+            message: ""+contents
         });
         logger.info("log sent!");
     }
@@ -119,7 +119,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.1.7"
+            message: "Version: 1.1.8"
         });
     }
 });
