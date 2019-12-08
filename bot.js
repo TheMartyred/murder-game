@@ -96,13 +96,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     if (message == "log")
     {
     	fs.readFile('DATA', 'utf8', function(err, contents) {
-    	var suggestions = contents;
+        	bot.sendMessage({
+            	to: channelID,
+            	message: contents
+        	});
 		});
-
-        bot.sendMessage({
-            to: channelID,
-            message: contents
-        });
     }
     if (message == "clear log")
     {
@@ -120,7 +118,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.1.2"
+            message: "Version: 1.1.3"
         });
     }
 });
