@@ -93,7 +93,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             });
         }
     }
-    if (message.substring(0,3) == "log")
+    if (message == "log")
     {
     	fs.readFile('DATA', 'utf8', function(err, contents) {
     	var suggestions = contents;
@@ -103,7 +103,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             to: channelID,
             message: contents
         });
-
+    }
+    if (message == "clear log")
+    {
         fs.writeFile('suggestions.txt', "", function (err) 
         	{
   				if (err)
@@ -114,11 +116,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			});
     }
     // if (message.substring(0, 3).equalsIgnoreCase("v#"))
-    if (message.substring(0, 2) == "v#")
+    if (message == "v#")
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.1.1"
+            message: "Version: 1.1.2"
         });
     }
 });
