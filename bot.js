@@ -93,12 +93,32 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             });
         }
     }
+    if (message.substring(0,3) == "log")
+    {
+    	fs.readFile('DATA', 'utf8', function(err, contents) {
+    	var suggestions = contents;
+		});
+
+        bot.sendMessage({
+            to: channelID,
+            message: contents
+        });
+
+        fs.writeFile('suggestions.txt', "", function (err) 
+        	{
+  				if (err)
+  				{ 
+  					throw err;
+  				}
+  				logger.info('Saved!');
+			});
+    }
     // if (message.substring(0, 3).equalsIgnoreCase("v#"))
     if (message.substring(0, 2) == "v#")
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.1.0"
+            message: "Version: 1.1.1"
         });
     }
 });
