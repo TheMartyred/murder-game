@@ -34,13 +34,14 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         var args = message.substring(3).split(' ');
 
         logger.info("registered: "+cmd);
-        var that = true;
+        var recognized = false;
         
         for (i = 0; i < args.length; i++)
         {
             var cmd = args[i];
             if (known.includes(cmd)) {
                 logger.info("Recognized!");
+                recognized = true;
                 var files = fs.readdirSync('./'+cmd);
                 logger.info("Files: ".concat(files[Math.floor(Math.random() * files.length)]));
                 bot.uploadFile({
@@ -54,6 +55,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         if (cmd == "that") 
         {
             logger.info("Recognized generic!");
+            recognized = true;
             var selection = known[Math.floor(Math.random() * known.length)]
             var files = fs.readdirSync('./'+selection);
             logger.info("Files: ".concat(files[Math.floor(Math.random() * files.length)]));
@@ -62,6 +64,17 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 file: "./"+selection+"/"+files[Math.floor(Math.random() * files.length)]
             });
             logger.info("File Uploaded!");
+        }
+        else if (!recognized)
+        {
+        	fs.writeFile('suggestions.txt', message, function (err) 
+        	{
+  				if (err)
+  				{ 
+  					throw err;
+  				}
+  				logger.info('Saved!');
+			});
         }
     }
     // if (message.substring(0, 3).equalsIgnoreCase("is ")) 
@@ -85,7 +98,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.0.3"
+            message: "Version: 1.1.3"
         });
     }
 });
