@@ -95,11 +95,14 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     }
     if (message == "log")
     {
-    	fs.readFile('DATA', 'utf8', function(err, contents) {
+    	fs.readFile('DATA', 'utf8', function(err, contents) 
+    	{
+    		logger.info("log requested!");
         	bot.sendMessage({
             	to: channelID,
             	message: contents
         	});
+        	logger.info("log sent!");
 		});
     }
     if (message == "clear log")
@@ -110,7 +113,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
   				{ 
   					throw err;
   				}
-  				logger.info('Saved!');
+  				logger.info('Cleared!');
 			});
     }
     // if (message.substring(0, 3).equalsIgnoreCase("v#"))
