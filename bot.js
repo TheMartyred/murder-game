@@ -67,7 +67,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         }
         else if (!recognized)
         {
-        	fs.appendFile('suggestions.txt', message+"\n", function (err) 
+        	fs.appendFile('suggestions.txt', message.substring(3)+"\n", function (err) 
         	{
   				if (err)
   				{ 
@@ -119,7 +119,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.1.8"
+            message: "Version: 1.1.9"
         });
     }
 });
