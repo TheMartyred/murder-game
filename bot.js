@@ -95,16 +95,13 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     }
     if (message == "log")
     {
-    	fs.readFile('DATA', 'utf8', function(err, contents) 
-    	{
-    		var suggestions = contents
-    		logger.info("log requested!");
-        	bot.sendMessage({
-            	to: channelID,
-            	message: "contents: "+contents
-        	});
-        	logger.info("log sent!");
-		});
+    	var contents = fs.readFileSync('DATA', 'utf8');
+    	logger.info("log requested!");
+        bot.sendMessage({
+            to: channelID,
+            message: "contents: "+contents
+        });
+        logger.info("log sent!");
     }
     if (message == "clear log")
     {
