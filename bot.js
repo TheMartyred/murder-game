@@ -2,7 +2,7 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 var fs = require('fs');
-var known = ["amy", "arcanine", "banjo", "blastoise", "blaziken", "bowser", "braixen", "buizel", "charizard", "charmander", "chespin", "chrom", "corrin", "daisy", "dedede", "diddy", "dixie", "dragonite", "eevee", "espeon", "falco", "falcon", "flareon", "fox", "futaba", "game&watch", "ganondorf", "glaceon", "goomba", "greninja", "guilmon", "houndoom", "hunt", "impmon", "incineroar", "inkling", "isabelle", "jiggly", "jolteon", "k.rool", "kass", "kazooie", "kirby", "knuckles", "kong", "koopa", "koops", "krystal", "laylee", "leafeon", "link", "lopunny", "lucario", "luigi", "mac", "mario", "marowak", "marth", "medli", "mega", "mewtwo", "midna", "mipha", "morgana", "nana", "olimar", "pac", "palutena", "peach", "pichu", "pikachu", "pit", "plant", "raichu", "rattata", "renamon", "revali", "ridley", "riolu", "robin", "rocko", "rosalina", "ruto", "salazzle", "samus", "sheik", "shinx", "smeargle", "snivy", "sonic", "sylveon", "tails", "tepig", "tiny", "umbreon", "vanilla", "villager", "wario", "weavile", "wii", "wolf", "yooka", "yoshi", "zangoose", "zelda", "zeraora", "zoroark"]
+var known = ["akechi", "amy", "ann", "arcanine", "banjo", "blastoise", "blaziken", "boruto", "bowser", "braixen", "buizel", "charizard", "charmander", "chespin", "chrom", "corrin", "daisy", "dedede", "diddy", "dixie", "dragonite", "eevee", "elizabeth", "espeon", "falco", "falcon", "flareon", "fiona", "fox", "futaba", "game&watch", "ganondorf", "glaceon", "goomba", "greninja", "guilmon", "haru", "hinata", "houndoom", "hunt", "ike", "impmon", "incineroar", "inkling", "ino", "isabelle", "jiggly", "joker", "jolteon", "k.rool", "karin", "kass", "kazooie", "kirby", "knuckles", "kong", "koopa", "koops", "krystal", "laylee", "leafeon", "link", "lopunny", "lucario", "luigi", "mac", "makoto", "mario", "marowak", "marth", "medli", "mega", "mewtwo", "midna", "mipha", "mishima", "monika", "morgana", "nana", "naruto", "natsuki", "olimar", "pac", "palutena", "peach", "pichu", "pikachu", "pit", "plant", "raichu", "rattata", "renamon", "revali", "richter", "ridley", "riolu", "robin", "rocko", "rosalina", "ruto", "ryuji", "sakura", "salazzle", "samus", "sasuke", "shadow", "sheik", "shinx", "shrek", "smeargle", "snake", "snivy", "sonic", "sylveon", "tails", "temari", "tepig", "tiny", "umbreon", "vanilla", "villager", "wario", "weavile", "wii", "wolf", "yooka", "yoshi", "yusuke", "yuri", "zangoose", "zelda", "zeraora", "zoroark"]
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
@@ -119,7 +119,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.1.9"
+            message: "Version: 1.2.0"
         });
     }
 });
