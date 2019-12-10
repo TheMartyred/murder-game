@@ -106,20 +106,51 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     if (message == "clear log")
     {
         fs.writeFile('suggestions.txt', "", function (err) 
+       	{
+			if (err)
+  			{ 
+ 				throw err;
+  			}
+  			logger.info('Cleared!');
+		});
+    }
+    if (message.substring(0, 7) == "remove ")
+    {
+        var character = message.substring(7);
+        var contents = fs.readFileSync('suggestions.txt', 'utf8').split('\n');
+        var newlog = "";
+        for (i = 0; i < contents.length; i++)
+        {
+        	contents[i] = contents[i].split(' ');
+        	if (contents[i].includes(character))
         	{
-  				if (err)
-  				{ 
-  					throw err;
-  				}
-  				logger.info('Cleared!');
-			});
+        		contents.splice(i, 1);
+        		i = i-1;
+        	}
+        } 
+        for (i = 0; i < contents.length; i++)
+        {
+        	for (n = 0; n < contents[i].length; n++)
+        	{
+        		newlog=newlog + contents[i][n] + " ";
+        	}
+        	newlog = newlog + "\n";
+        }
+        fs.writeFile('suggestions.txt', newlog, function (err) 
+        {	
+  			if (err)
+  			{ 
+  				throw err;
+  			}
+  			logger.info('removed!');
+		});
     }
     // if (message.substring(0, 3).equalsIgnoreCase("v#"))
     if (message == "v#")
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.2.0"
+            message: "Version: 1.3.0"
         });
     }
 });
