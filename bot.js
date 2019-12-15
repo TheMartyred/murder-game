@@ -67,7 +67,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         }
         else if (!recognized)
         {
-        	fs.appendFile('suggestions.txt', message.substring(3)+"\n", function (err) 
+        	fs.appendFileSync('suggestions.txt', message.substring(3)+"\n", function (err) 
         	{
   				if (err)
   				{ 
@@ -105,7 +105,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     }
     if (message == "clear log")
     {
-        fs.writeFile('suggestions.txt', "", function (err) 
+        fs.writeFileSync('suggestions.txt', "", function (err) 
        	{
 			if (err)
   			{ 
@@ -136,7 +136,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         	}
         	newlog = newlog + "\n";
         }
-        fs.writeFile('suggestions.txt', newlog, function (err) 
+        fs.writeFileSync('suggestions.txt', newlog, function (err) 
         {	
   			if (err)
   			{ 
@@ -150,7 +150,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.5.1"
+            message: "Version: 1.5.2"
         });
     }
 });
