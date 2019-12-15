@@ -105,6 +105,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         var character = message.substring(7);
         var contents = fs.readFileSync('suggestions.txt', 'utf8').split('\n');
         var newlog = "";
+        var newlogline = ""
         for (i = 0; i < contents.length; i++)
         {
         	contents[i] = contents[i].split(' ');
@@ -116,11 +117,13 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         } 
         for (i = 0; i < contents.length; i++)
         {
+        	newlogline = "";
         	for (n = 0; n < contents[i].length; n++)
         	{
-        		newlog=newlog + contents[i][n] + " ";
+        		newlogline = newlogline + contents[i][n] + " ";
         	}
-        	if (contents[i].replace(" ", "").length>0)
+        	newlog=newlog + newlogline;
+        	if (newlogline.replace(" ", "").length>0)
         	{
         		newlog = newlog + "\n";
         	}
@@ -132,7 +135,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.5.6"
+            message: "Version: 1.5.7"
         });
     }
 });
