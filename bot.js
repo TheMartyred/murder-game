@@ -120,7 +120,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         	{
         		newlog=newlog + contents[i][n] + " ";
         	}
-        	if (contents[i].length>1)
+        	if (contents[i].replace(" ", "").length>0)
         	{
         		newlog = newlog + "\n";
         	}
@@ -132,7 +132,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.5.5"
+            message: "Version: 1.5.6"
         });
     }
 });
