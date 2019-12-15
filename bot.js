@@ -67,14 +67,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         }
         else if (!recognized)
         {
-        	fs.appendFileSync('suggestions.txt', message.substring(3)+"\n", function (err) 
-        	{
-  				if (err)
-  				{ 
-  					throw err;
-  				}
-  				logger.info('Saved!');
-			});
+        	fs.appendFileSync('suggestions.txt', message.substring(3)+"\n");
         }
     }
     // if (message.substring(0, 3).equalsIgnoreCase("is ")) 
@@ -105,14 +98,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     }
     if (message == "clear log")
     {
-        fs.writeFileSync('suggestions.txt', "", function (err) 
-       	{
-			if (err)
-  			{ 
- 				throw err;
-  			}
-  			logger.info('Cleared!');
-		});
+        fs.writeFileSync('suggestions.txt', "");
     }
     if (message.substring(0, 7) == "remove ")
     {
@@ -136,21 +122,14 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         	}
         	newlog = newlog + "\n";
         }
-        fs.writeFileSync('suggestions.txt', newlog, function (err) 
-        {	
-  			if (err)
-  			{ 
-  				throw err;
-  			}
-  			logger.info('removed!');
-		});
+        fs.writeFileSync('suggestions.txt', newlog);
     }
     // if (message.substring(0, 3).equalsIgnoreCase("v#"))
     if (message == "v#")
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.5.2"
+            message: "Version: 1.5.3"
         });
     }
 });
