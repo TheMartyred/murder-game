@@ -120,7 +120,10 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         	{
         		newlog=newlog + contents[i][n] + " ";
         	}
-        	newlog = newlog + "\n";
+        	if (contents[i].length>0)
+        	{
+        		newlog = newlog + "\n";
+        	}
         }
         fs.writeFileSync('suggestions.txt', newlog);
     }
@@ -129,7 +132,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.5.3"
+            message: "Version: 1.5.4"
         });
     }
 });
