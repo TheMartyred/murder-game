@@ -123,7 +123,8 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         		newlogline = newlogline + contents[i][n] + " ";
         	}
         	newlog=newlog + newlogline;
-        	if (newlogline.replace(" ", "").length>0)
+        	newlogline.replace(" ", "")
+        	if (newlogline.length>0)
         	{
         		newlog = newlog + "\n";
         	}
@@ -135,7 +136,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.5.7"
+            message: "Version: 1.5.8"
         });
     }
 });
