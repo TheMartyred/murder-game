@@ -2,7 +2,7 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 var fs = require('fs');
-var known = ["akechi", "amy", "ann", "arcanine", "banjo", "blastoise", "blaziken", "boruto", "bowser", "braixen", "buizel", "charizard", "charmander", "chespin", "chrom", "corrin", "daisy", "dedede", "diddy", "dixie", "dragonite", "eevee", "elizabeth", "espeon", "falco", "falcon", "flareon", "fiona", "fox", "futaba", "game&watch", "ganondorf", "glaceon", "goomba", "greninja", "guilmon", "haru", "hero", "hinata", "houndoom", "hunt", "ike", "impmon", "incineroar", "inkling", "ino", "isabelle", "jiggly", "joker", "jolteon", "k.rool", "karin", "kass", "kazooie", "kirby", "knuckles", "kong", "koopa", "koops", "krystal", "laylee", "leafeon", "link", "lopunny", "lucario", "lucas", "lucina", "luigi", "mac", "makoto", "mario", "marowak", "marth", "medli", "mega", "mewtwo", "midna", "mipha", "mishima", "monika", "morgana", "nana", "naruto", "natsuki", "ness", "olimar", "pac", "palutena", "peach", "pichu", "pikachu", "pit", "plant", "raichu", "rattata", "red", "renamon", "revali", "richter", "ridley", "riolu", "robin", "rocko", "rosalina", "ruto", "ryuji", "sakura", "salazzle", "samus", "sasuke", "shadow", "sheik", "shinx", "shrek", "smeargle", "snake", "snivy", "sonic", "sylveon", "tails", "temari", "tepig", "tepig", "tiny", "umbreon", "vanilla", "villager", "wario", "weavile", "wii", "wolf", "yooka", "yoshi", "yusuke", "yuri", "zangoose", "zelda", "zeraora", "zoroark"]
+var known = ["akechi", "amy", "angus", "ann", "arcanine", "banjo", "bayonetta", "bea", "blastoise", "blaziken", "boruto", "bowser", "braixen", "buizel", "charizard", "charmander", "chespin", "chrom", "cloud", "corrin", "daisy", "dedede", "diddy", "dixie", "dragonite", "eevee", "elizabeth", "espeon", "falco", "falcon", "flareon", "fiona", "fox", "futaba", "game&watch", "ganondorf", "glaceon", "goomba", "gregg", "greninja", "guilmon", "haida", "haru", "hero", "hinata", "houndoom", "hunt", "ike", "impmon", "incineroar", "inkling", "ino", "isabelle", "jiggly", "joker", "jolteon", "k.rool", "karin", "kass", "kazooie", "kirby", "knuckles", "kong", "koopa", "koops", "krystal", "laylee", "leafeon", "link", "lopunny", "lucario", "lucas", "lucina", "luigi", "luma", "mac", "makoto", "mario", "marowak", "marth", "medli", "mega", "meta", "mewtwo", "midna", "mipha", "mishima", "monika", "morgana", "nana", "naruto", "natsuki", "ness", "olimar", "pac", "palutena", "peach", "pichu", "pikachu", "pit", "plant", "r.o.b", "raichu", "rattata", "red", "renamon", "revali", "richter", "ridley", "riolu", "robin", "rocko", "rosalina", "roy", "ruto", "ryu", "ryuji", "sakura", "salazzle", "samus", "sasuke", "shadow", "sheik", "shinx", "shrek", "shulk", "simon", "smeargle", "snake", "snivy", "sonic", "sylveon", "tails", "temari", "tepig", "tepig", "tiny", "umbreon", "vanilla", "villager", "wario", "weavile", "wii", "wolf", "yooka", "yoshi", "yusuke", "yuri", "zangoose", "zelda", "zeraora", "zoroark"]
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
@@ -136,7 +136,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.5.8"
+            message: "Version: 1.6.0"
         });
     }
 });
