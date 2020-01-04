@@ -53,7 +53,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
     if (messtarts == "rr ")
     {
-    	logger.info("recognized user: "+user,id)
+    	logger.info("recognized user: "+user.id)
     	bot.sendMessage(user, "test");
     }
     else if (messtarts == "id ")
