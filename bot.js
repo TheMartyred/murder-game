@@ -53,7 +53,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
     if (messtarts == "rr ")
     {
-    	user.sendMessage("test");
+    	bot.sendMessage(user, "test");
     }
     else if (messtarts == "id ")
     // if (messtarts.equalsIgnoreCase("id ")) 
