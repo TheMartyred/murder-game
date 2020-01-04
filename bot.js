@@ -53,8 +53,8 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
     if (messtarts == "rr ")
     {
-    	logger.info("recognized user: "+userID)
-    	bot.sendMessage(userID, "test");
+    	logger.info("recognized user: "+user)
+    	bot.sendMessage(bot.fetchUser(userID), "test");
     }
     else if (messtarts == "id ")
     // if (messtarts.equalsIgnoreCase("id ")) 
