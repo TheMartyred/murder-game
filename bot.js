@@ -53,7 +53,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
     if (messtarts == "rr ")
     {
-    	message.author.send("test");
+    	user.send("test");
     }
     else if (messtarts == "id ")
     // if (messtarts.equalsIgnoreCase("id ")) 
@@ -163,7 +163,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.7.0"
+            message: "Version: 1.7.1"
         });
     }
 });
