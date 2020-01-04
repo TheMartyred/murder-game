@@ -53,6 +53,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
     if (messtarts == "rr ")
     {
+    	logger.info("recognized user: "+user)
     	bot.sendMessage(user, "test");
     }
     else if (messtarts == "id ")
@@ -163,7 +164,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.7.2"
+            message: "Version: 1.7.3"
         });
     }
 });
