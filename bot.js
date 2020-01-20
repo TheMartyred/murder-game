@@ -158,7 +158,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     //     	}
     //     }
     //     fs.writeFileSync('suggestions.txt', newlog);
-    }
+    // }
     // if (message.substring(0, 3).equalsIgnoreCase("v#"))
     if (message == "v#")
     {
