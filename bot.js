@@ -5,7 +5,7 @@ var fs = require('fs');
 var known = ["akechi", "amy", "angus", "ann", "arcanine", "ariel",
 "banjo", "bayonetta", "bea", "beast", "belle", "blastoise", "blaziken", "boruto", "bowser", "braixen", "buizel", 
 "charizard", "charmander", "chespin", "chrom", "cloud", "corrin", "cuphead", 
-"daisy", "dedede", "diddy", "dixie", "dragonite", 
+"daisy", "dedede", "diddy", "dixie", "donkey", "dragonite", 
 "eevee", "elizabeth", "espeon", 
 "falco", "falcon", "flareon", "fiona", "fox", "futaba", 
 "game&watch", "ganondorf", "gaston", "glaceon", "goodra", "goofy", "goomba", "goombella", "gregg", "greninja", "guilmon", 
