@@ -2,25 +2,25 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 var fs = require('fs');
-var known = ["akechi", "amy", "angus", "ann", "arcanine", "ariel",
+var known = ["akechi", "aladdin", "amy", "angus", "ann", "arcanine", "ariel",
 "banjo", "bayonetta", "bea", "beast", "belle", "blastoise", "blaziken", "boruto", "bowser", "braixen", "buizel", 
 "charizard", "charmander", "chespin", "chrom", "cloud", "corrin", "cuphead", 
-"daisy", "dedede", "diddy", "dixie", "donkey", "dragonite", 
+"daisy", "daxter", "dedede", "diddy", "dixie", "donkey", "dragonite", 
 "eevee", "elizabeth", "espeon", 
 "falco", "falcon", "flareon", "fiona", "fox", "futaba", 
-"game&watch", "ganondorf", "gaston", "glaceon", "goodra", "goofy", "goomba", "goombella", "gregg", "greninja", "guilmon", 
+"game&watch", "ganondorf", "gaston", "genie", "glaceon", "goodra", "goofy", "goomba", "goombella", "gregg", "greninja", "guilmon", 
 "haida", "haru", "hero", "hinata", "houndoom", "hunt", 
 "ike", "impmon", "incineroar", "inkling", "ino", "isabelle", 
-"jafar", "jasmine", "jiggly", "joker", "jolteon", "judy", 
-"k.rool", "karin", "kass", "kazooie", "khan", "kirby", "knuckles", "kong", "koopa", "koops", "krystal", 
+"jafar", "jasmine", "jerry", "jiggly", "joker", "jolteon", "judy", 
+"k.rool", "karin", "kass", "kazooie", "kermit", "khan", "kirby", "knuckles", "kong", "koopa", "koops", "krystal", 
 "laylee", "leafeon", "link", "lopunny", "lucario", "lucas", "lucina", "luigi", "luma", 
-"mac", "mae", "makoto", "mario", "marowak", "marth", "max", "medli", "mega", "meta", "mewtwo", "mickey", "midna", "mike", "mipha", "mishima", "monika", "morgana", "mugman",
-"nala", "nana", "naruto", "natsuki", "ness", "nick", 
+"mac", "mae", "makoto", "mario", "marowak", "marth", "max", "medli", "mega", "meta", "mewtwo", "mickey", "midna", "mike", "mipha", "mishima", "monika", "morgana", "mugman", "mushu", 
+"nala", "nana", "naruto", "natsuki", "ness", "nick", "nook", 
 "olimar", 
-"pac", "palutena", "peach", "peg", "pichu", "pikachu", "pit", "plant", "po",
+"pac", "palutena", "peach", "peg", "pichu", "piggy", "pikachu", "pit", "plant", "po",
 "r.o.b", "raichu", "randall", "rattata", "red", "renamon", "revali", "richter", "ridley", "riolu", "robin", "rocko", "rosalina", "roxanne", "roy", "ruto", "ryu", "ryuji", 
-"sakura", "salazzle", "samus", "sans", "sasuke", "scar", "shadow", "sheik", "shinx", "shrek", "shulk", "silver", "simba", "simon", "smeargle", "snake", "snivy", "sonic", "sulley", "sylveon", 
-"tails", "temari", "tepig", "tepig", "tigress", "tiny", 
+"sakura", "salazzle", "samus", "sans", "sasuke", "scar", "shadow", "sheik", "shinx", "shrek", "shulk", "silver", "simba", "simon", "smeargle", "snake", "snivy", "sonic", "steve", "sulley", "sylveon", 
+"tails", "temari", "tepig", "tepig", "tigress", "timon", "tiny", "tom", 
 "umbreon", 
 "vanilla", "villager", "vivian", 
 "wario", "weavile", "wii", "wolf", 
@@ -164,7 +164,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     {
         bot.sendMessage({
             to: channelID,
-            message: "Version: 1.7.4"
+            message: "Version: 1.8.0"
         });
     }
 });
