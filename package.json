@@ -1,7 +1,7 @@
 {
-	"name": "not-a-porn-bot",
+	"name": "murder-game",
 	"version": "1.0.0",
-	"description": "definitely does not post cropped porn",
+	"description": "a discord bot for a murder mystery game",
 	"main": "bot.js",
 	"author": "TheMartyred",
 	"dependencies": {
